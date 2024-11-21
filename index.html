@@ -4,24 +4,33 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>CritLife</title>
-	  javascript:(function () { var script = document.createElement('script'); script.src="https://cdn.jsdelivr.net/npm/eruda"; document.body.append(script); script.onload = function () { eruda.init(); } })();
+    
+    <!-- Include Eruda in a standard way for proper initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        eruda.init();
+      });
+    </script>
+    
     <link rel="stylesheet" href="style.css" />
-	<script src="TemplateData/UnityProgress.js"></script>
+    <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
       var unityInstance = UnityLoader.instantiate("gameContainer", "Build/BitLife.json", {onProgress: UnityProgress});
     </script>
-<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-NM2Y6MDTZN"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-NM2Y6MDTZN');
-	</script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NM2Y6MDTZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NM2Y6MDTZN');
+    </script>
   </head>
   <body>
-  <div class="webgl-content">
+    <div class="webgl-content">
       <div id="gameContainer" style="width: 100%; height: 100%;"></div>
     </div>
   </body>
